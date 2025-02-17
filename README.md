@@ -45,6 +45,7 @@ A web-based dashboard application that visualizes key performance indicators (KP
 ### 1️⃣ Clone the Repository
 
 git clone https://github.com/Mallikarjuna-dev/prowiz-task.git
+cd prowiz-task
 
 ### 2️⃣ Install Dependencies
 
