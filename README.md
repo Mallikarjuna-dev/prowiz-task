@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# 📊 KPI Tracker Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web-based dashboard application that visualizes key performance indicators (KPIs) for a production line. The dashboard includes data filtering, KPI cards, charts, and a rejection details table with dynamic filtering.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+✅ **Dynamic Filtering** - Users can filter data by Application, Line Number, Reason for Rejection, and Date Range
+✅ **KPI Cards** - Displays Units Processed, Units Passed, Units Rejected, and Throughput (Units/Minute)
+✅ **Interactive Charts** - Includes Bar Chart (Units Processed) and Pie Chart (Rejection Reasons)
+✅ **React-Select for Dropdowns** – User-friendly multi-select dropdowns  
+✅ **Data Table** - Shows rejection details with a minimum of 3 rows, even if filtering yields fewer results
+✅ **Persistent Selection** - Filters are saved in localStorage so selections persist after page reloads
+✅ **User Profile Section** - Displays the logged-in user's profile picture in the navbar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠 Tech Stack
 
-### `npm test`
+**Frontend**: React.js, Tailwind CSS, Recharts, React-Select
+**State Management**: Local Component State
+**Data Storage**: Local Storage (for filters)
+**Design System**: Tailwind CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### 🔄 Sidebar Navigation (Dynamic Page Switching)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Sidebar allows navigation between:
+  1. **KPI Dashboard (Main Component)**
+  2. **Camera View**
+  3. **Event Log**
+- The displayed content updates **based on the selected sidebar option**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 📊 Charts & Tables
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Recharts Bar & Pie Charts** reflect filtered data.
+- The **Data Table** updates to show only filtered results.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 How to Run Locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1️⃣ Clone the Repository
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+git clone https://github.com/Mallikarjuna-dev/prowiz-task.git
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 2️⃣ Install Dependencies
 
-## Learn More
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 3️⃣ Start the Development Server
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+npm start
 
-### Code Splitting
+The project will run on http://localhost:3000/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🌍 Deployment
+The dashboard is deployed on Netlify.
+🔗 Live Demo: https://prowiz-task.vercel.app/
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📌 Credits
+Developed by Aj

@@ -34,45 +34,42 @@ const Dashboard = () => {
     );
 
     return (
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row">
             <Sidebar />
-            <div className="flex-1 p-6 bg-gray-100 min-h-screen">
-                <div className="flex justify-between items-center mb-4">
+            <div className="flex-1 p-4 bg-gray-100 min-h-screen">
+                {/* Header */}
+                <div className="bg-white p-3 flex flex-col sm:flex-row justify-between items-center mb-4 shadow rounded-lg">
                     <h2 className="text-2xl font-semibold">KPI Tracker</h2>
-                    <div className="flex items-center space-x-4">
+                    <div className="flex items-center space-x-4 mt-2 sm:mt-0">
                         <span className="font-medium">User</span>
-                        <img
-                            src="/assets/user-profile.png"
-                            alt="User Profile"
-                            className="w-10 h-10 rounded-full border border-gray-300"
-                        />
+                        <img src="/assets/user-profile.png" alt="User Profile" className="w-10 h-10 rounded-full border border-gray-300" />
                     </div>
                 </div>
 
                 {/* Filters */}
-                <div className="grid grid-cols-5 gap-4 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-6">
                     <Select options={appOptions} onChange={setSelectedApplication} placeholder="Application" />
                     <Select options={lineOptions} onChange={setSelectedLine} placeholder="Line Number" />
                     <Select options={lineOptions} onChange={setSelectedLine} placeholder="Reason for rejection" />
                     <Select options={lineOptions} onChange={setSelectedLine} placeholder="Select date Range" />
-                    <button className="p-2 bg-blue-600 text-white text-xl rounded-lg mb-1">Download</button>
+                    <button className="p-2 bg-blue-600 text-white text-xl rounded-lg w-full">Download</button>
                 </div>
 
                 {/* KPI Cards */}
-                <div className="grid grid-cols-4 gap-4 mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                     {["Units Processed", "Units Passed", "Units Rejected", "Throughput (Units/Minute)"].map((title, index) => (
-                        <div key={index} className="bg-white p-4 rounded-xl shadow">
+                        <div key={index} className="bg-white p-4 rounded-xl shadow text-center">
                             <p className="text-gray-600">{title}</p>
                             <h3 className="text-xl font-bold">{Object.values(dashboardData)[index]}</h3>
                         </div>
                     ))}
                 </div>
 
-                <div className="grid grid-cols-2 gap-6">
-                    {/* Bar Chart */}
+                {/* Charts */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div className="bg-white p-4 rounded-xl shadow">
                         <h3 className="text-lg font-semibold mb-3">Split of Units Processed Today</h3>
-                        <BarChart className="ml-10" width={550} height={250} data={dashboardData.splitData}>
+                        <BarChart width={350} height={250} data={dashboardData.splitData} className="mx-auto">
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey="name" />
                             <YAxis />
@@ -83,10 +80,9 @@ const Dashboard = () => {
                         </BarChart>
                     </div>
 
-                    {/* Pie Chart */}
                     <div className="bg-white p-4 rounded-xl shadow">
                         <h3 className="text-lg font-semibold mb-3">Reasons for Rejection</h3>
-                        <PieChart width={650} height={250}>
+                        <PieChart width={350} height={250} className="mx-auto">
                             <Pie data={dashboardData.rejectionReasons} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={80}>
                                 <Cell fill="#3b82f6" />
                                 <Cell fill="#10b981" />
@@ -97,7 +93,7 @@ const Dashboard = () => {
                 </div>
 
                 {/* Table */}
-                <div className="bg-white mt-6 p-4 rounded-xl shadow">
+                <div className="bg-white mt-6 p-4 rounded-xl shadow overflow-x-auto">
                     <h3 className="text-lg font-semibold mb-3">Rejection Details</h3>
                     <table className="w-full text-left border-collapse">
                         <thead>
